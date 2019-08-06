@@ -11,7 +11,7 @@ import org.springframework.core.type.AnnotationMetadata;
  */
 public class DataSourceComponentRegister implements ImportBeanDefinitionRegistrar {
 
-    private final static String DEFAULT_BASE_PACKAGE = "com.zhoupu";
+    private final static String DEFAULT_BASE_PACKAGE = "com.github.yhqy.datasource";
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
         ClassPathBeanDefinitionScanner beanDefinitionScanner = new ClassPathBeanDefinitionScanner(registry);

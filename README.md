@@ -5,11 +5,13 @@
 用于动态数据源，多数据源处理。
 使用方法参数动态切换数据源，支持动态添加数据源。
 
+[动态数据源demo](https://gitee.com/yuanheqiuye/multi-datasource-demo)
+
 ## 安装
 
 ```xml
 <dependency>
-    <groupId>com.zhoupu.xchen</groupId>
+    <groupId>com.github.yhqy</groupId>
     <artifactId>multi-datasource-spring-boot-starter</artifactId>
     <version>1.0.0</version>
 </dependency>
