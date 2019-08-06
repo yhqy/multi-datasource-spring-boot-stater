@@ -8,10 +8,6 @@ import org.springframework.context.annotation.Import;
 import javax.sql.DataSource;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * @author xchen
- * @date 2019/8/5 19:31
- */
 @Configuration
 @ConditionalOnBean(DataSourceFactory.class)
 @Import(DataSourceComponentRegister.class)

@@ -2,10 +2,10 @@ package com.github.yhqy.datasource;
 
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
-import com.zhoupu.xchen.datasource.annotation.DataSourceType;
-import com.zhoupu.xchen.datasource.annotation.Did;
-import com.zhoupu.xchen.datasource.utils.ClassUtils;
-import com.zhoupu.xchen.datasource.utils.MapUtils;
+import com.github.yhqy.datasource.annotation.DataSourceType;
+import com.github.yhqy.datasource.annotation.Did;
+import com.github.yhqy.datasource.utils.ClassUtils;
+import com.github.yhqy.datasource.utils.MapUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -24,10 +24,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * @author xchen
- * @date 2019/8/5 20:23
- */
 @Component
 @Aspect
 @Order(1)
@@ -40,7 +36,7 @@ public class DataSourceAspect {
     @Autowired
     private DataSourceFactory dataSourceFactory;
 
-    @Pointcut("target(com.zhoupu.xchen.datasource.DAO)")
+    @Pointcut("target(com.github.yhqy.datasource.DAO)")
     public void aspect() {
     }
 

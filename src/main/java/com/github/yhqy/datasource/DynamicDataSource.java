@@ -6,12 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.sql.DataSource;
 import java.util.Set;
 
-/**
- * 动态数据源具体实现
- *
- * @author xchen
- * @date 2019/8/5 19:25
- */
 public class DynamicDataSource extends AbstractConcurrentRoutingDataSource {
 
     private Set<String> hasCreateDataSource = new ConcurrentHashSet<>();

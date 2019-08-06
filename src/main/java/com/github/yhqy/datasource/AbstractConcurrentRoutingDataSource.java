@@ -12,13 +12,6 @@ import java.sql.SQLException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * 扩展 AbstractRoutingDataSource
- * 线程安全的，支持获取数据源、动态添加的数据源
- *
- * @author xchen
- * @date 2019/8/5 18:20
- */
 @SuppressWarnings("DuplicatedCode")
 public abstract class AbstractConcurrentRoutingDataSource extends AbstractRoutingDataSource {
 

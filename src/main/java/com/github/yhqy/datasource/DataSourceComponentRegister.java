@@ -5,10 +5,6 @@ import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
 
-/**
- * @author xchen
- * @date 2019/8/6 11:05
- */
 public class DataSourceComponentRegister implements ImportBeanDefinitionRegistrar {
 
     private final static String DEFAULT_BASE_PACKAGE = "com.github.yhqy.datasource";

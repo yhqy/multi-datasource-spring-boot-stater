@@ -3,10 +3,6 @@ package com.github.yhqy.datasource.utils;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
-/**
- * @author xchen
- * @date 2019/8/5 20:31
- */
 public class ClassUtils {
 
     public static boolean haveAnnotation(Class clazz, Class<? extends Annotation> annotation) {

@@ -2,10 +2,6 @@ package com.github.yhqy.datasource;
 
 import javax.sql.DataSource;
 
-/**
- * @author xchen
- * @date 2019/8/5 19:33
- */
 public interface DataSourceFactory {
 
     /**
