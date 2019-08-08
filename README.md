@@ -17,50 +17,13 @@
 </dependency>
 ```
 
-## 配置数据源工厂
+## 先看一下如何使用？（配置见下一节）
 
-```java
-@Component
-public class DemoDataSourceFactory implements DataSourceFactory {
-
-    /**
-    * 默认数据源
-    */
-    @Override
-    public DataSource createDefaultDataSource() {
-        return DataSourceBuilder.create().username("root").password("chenxing")
-                .url("jdbc:mysql://localhost:3306/test_common?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8")
-                .build();
-    }
-
-    /**
-    * 根据key创建数据源（后面根据key进行切库）
-    */
-    @Override
-    public DataSource createDataSource(String key) {
-        if("1".equals(key)){
-            return DataSourceBuilder.create().username("username1").password("password2").url("jdbc:mysql://xxxx").build();
-        } else if("2".equals(key)) {
-            return DataSourceBuilder.create().username("username1").password("password2").url("jdbc:mysql://xxxx").build();
-        }
-        
-    }
-
-    /**
-    * 从bean，map, collection中获取key值时的值
-    */
-    @Override
-    public String key() {
-        return "dataSourceId";
-    }
-}
-```
-
-## 使用
+此处以mybatis为例，其他类似
 
 ```java
 /**
-* 实现DAO接口（DAO接口是一个标志接口）
+* 实现DAO接口（DAO接口是一个标志接口，无任何需要实现的方法）
 */
 @Mapper
 public interface TestMapper extends DAO {
@@ -100,4 +63,42 @@ public interface TestMapper extends DAO {
 - 5：使用@Did标记，使用List.get(0)后获得的第一个User,然后使用通过user.getDataSourceId()获得的key对应的数据源;
 - 6：使用@Did标记，使用List.get(0)后获得的第一个map,然后使用map.get("dataSourceId")获得的值对应的数据源;
 
+## 配置数据源工厂
+
+```java
+@Component
+public class DemoDataSourceFactory implements DataSourceFactory {
+
+    /**
+    * 默认数据源
+    */
+    @Override
+    public DataSource createDefaultDataSource() {
+        return DataSourceBuilder.create().username("root").password("password")
+                .url("jdbc:mysql://localhost:3306/test_common?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8")
+                .build();
+    }
+
+    /**
+    * 根据key创建数据源（后面根据key进行切库）
+    */
+    @Override
+    public DataSource createDataSource(String key) {
+        if("1".equals(key)){
+            return DataSourceBuilder.create().username("username1").password("password2").url("jdbc:mysql://xxxx").build();
+        } else if("2".equals(key)) {
+            return DataSourceBuilder.create().username("username1").password("password2").url("jdbc:mysql://xxxx").build();
+        }
+        
+    }
+
+    /**
+    * 从bean，map, collection中获取key值时的值
+    */
+    @Override
+    public String key() {
+        return "dataSourceId";
+    }
+}
+```
 
