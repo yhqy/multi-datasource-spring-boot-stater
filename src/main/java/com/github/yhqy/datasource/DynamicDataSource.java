@@ -15,7 +15,7 @@ public class DynamicDataSource extends AbstractConcurrentRoutingDataSource {
 
     @Override
     protected Object determineCurrentLookupKey() {
-        String key = DataSourceHolder.get();
+        String key = DataSourceKeyHolder.get();
         if (null == key) {
             return null;
         }

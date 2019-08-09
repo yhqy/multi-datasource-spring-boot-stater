@@ -1,6 +1,6 @@
 package com.github.yhqy.datasource;
 
-class DataSourceHolder {
+class DataSourceKeyHolder {
     private final static ThreadLocal<String> dataSourceHolder = new ThreadLocal<>();
 
     static void set(String key) {

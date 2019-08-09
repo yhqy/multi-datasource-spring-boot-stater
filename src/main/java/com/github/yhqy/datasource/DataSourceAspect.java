@@ -46,16 +46,16 @@ public class DataSourceAspect {
         Method method = signature.getMethod();
         DataSourceType dataSourceType = getDataSourceType(method);
         if (DataSourceType.DEFAULT.equals(dataSourceType)) {
-            DataSourceHolder.set(null);
+            DataSourceKeyHolder.set(null);
             return;
         }
         String dataSourceDid = getDataSourceDid(joinPoint, signature, method);
-        DataSourceHolder.set(dataSourceDid);
+        DataSourceKeyHolder.set(dataSourceDid);
     }
 
     @After("aspect()")
     public void after() {
-        DataSourceHolder.clear();
+        DataSourceKeyHolder.clear();
     }
 
 
@@ -66,14 +66,14 @@ public class DataSourceAspect {
             Parameter[] parameters = method.getParameters();
             for (int i = 0; i < parameters.length; i++) {
                 if (null != parameters[i].getAnnotation(Did.class)) {
-                    return getCid(args[i], paramTypeArr[i]);
+                    return getDid(args[i], paramTypeArr[i]);
                 }
             }
         }
         return null;
     }
 
-    private String getCid(Object obj, Class paramType) throws InvocationTargetException, IllegalAccessException {
+    private String getDid(Object obj, Class paramType) throws InvocationTargetException, IllegalAccessException {
         if (null == obj) {
             return null;
         }
@@ -89,7 +89,7 @@ public class DataSourceAspect {
             if (iterator.hasNext()) {
                 Object param = iterator.next();
                 if (null != param) {
-                    return getCid(param, param.getClass());
+                    return getDid(param, param.getClass());
                 }
             }
         } else {
