@@ -72,6 +72,7 @@ public interface TestMapper extends DAO {
 
 }
 ```
+注意：此处必须实现DAO接口，DAO接口只是一个标识类，不包含任何方法
 
 ### 数据源配置
 ```java
