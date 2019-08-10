@@ -162,8 +162,8 @@ public interface TestMapper extends DAO {
 
 说明：
 - 1: 未使用@Did标记，使用默认数据源;
-- 2：使用@Did标记，使用datasourceId.toString()后对应的数据源;
-- 3：使用@Did标记，使用user.getDataSourceId()方法获得的值所对应的数据源（通过DataSourceFactory.key()方法获得key所对应的get方法）;
+- 2：使用@Did标记，使用datasourceId.toString()后对应的数据源,此处支持基本数据类型及string类型;
+- 3：使用@Did标记，使用user.getDataSourceId()方法获得的值所对应的数据源（bean类型，通过DataSourceFactory.key()方法获得key所对应的get方法）;
 - 4：使用@Did标记，使用map.get("dataSourceId")获得的值对应的数据源;
 - 5：使用@Did标记，使用List.get(0)后获得的第一个User,然后使用通过user.getDataSourceId()获得的key对应的数据源;
 - 6：使用@Did标记，使用List.get(0)后获得的第一个map,然后使用map.get("dataSourceId")获得的值对应的数据源;
