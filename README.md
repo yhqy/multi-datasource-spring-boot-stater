@@ -6,7 +6,7 @@
 使用方法参数动态切换数据源，支持动态添加数据源。
 
 - [动态数据源demo](https://gitee.com/yuanheqiuye/multi-datasource-demo)
-- [《完全理解spring动态数据源原理》](https://blog.csdn.net/weixin_43002640/article/details/98989716)
+- [《完全理解spring动态数据源原理》](https://my.oschina.net/u/4184161/blog/3085983)
 
 ## 安装
 
