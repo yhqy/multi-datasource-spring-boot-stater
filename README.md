@@ -13,7 +13,7 @@
 <dependency>
     <groupId>com.github.yhqy</groupId>
     <artifactId>multi-datasource-spring-boot-starter</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
